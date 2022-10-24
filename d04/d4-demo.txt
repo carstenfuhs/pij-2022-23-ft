@@ -1,0 +1,14 @@
+Ex 1
+int size: 01 - 20
+int newSize: 04 - 06
+int i: 09 - 18
+int j: 10 - 16
+
+Ex 2
+STACK              HEAP
+Point myPoint ---> Point[int x=1, int y=0]
+int myInt = 0 
+         
+myPoint and point were aliases
+aliasing
+
