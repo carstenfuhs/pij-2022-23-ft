@@ -1,0 +1,15 @@
+Simple types: data is stored on the stack
+- int - 32 bits
+- char - 16 bits
+- boolean - 1 bit
+- double - 64 bits
+- long - 64 bits
+
+Complex types: data is stored on the heap,
+    pointer to data is stored on the stack
+- String
+- List
+- our own classes! e.g., Person
+- boxed types: Integer, ...
+
+Beware: null pointer in Java
