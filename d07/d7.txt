@@ -1,0 +1,25 @@
+Interfaces
+public interface List {
+    /** ... */
+    void add(Element e);
+    Element get(int i);
+    boolean isEmpty();
+    Element getFirst();
+    int size();
+}
+
+public class LinkedList implements List {
+    private Node head; // implementation details
+    // and implementations of all the methods in List
+}
+
+public class ArrayList implements List {
+    private Element[] content;
+    // and implementations of all the methods in List
+}
+
+    public void printAll(List list) {
+        for (int i = 0; i < list.size(); i++) {
+            System.out.println(list.get(i));
+        }
+    }
