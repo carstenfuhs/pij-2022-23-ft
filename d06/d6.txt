@@ -1,0 +1,20 @@
+constants: final
+final double LITRES_PER_BOTTLE = 1.5;
+private static double LITRES_PER_BOTTLE = 1.5;
+public static double Math.PI
+
+long comment: /* */
+
+javadoc
+/** ... */
+
+Comparing Strings: == vs .equals()
+
+do ... while loop
+
+linked lists
+
+public class Node {
+   private int data;
+   private Node nextElement;
+}
