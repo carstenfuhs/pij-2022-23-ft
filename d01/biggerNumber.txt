@@ -1,0 +1,14 @@
+// ask the user for two numbers, then say which one was bigger
+System.out.println("Please enter a number!");
+String s = System.console().readLine();
+int x = Integer.parseInt(s);
+System.out.println("Please enter a second number!");
+s = System.console().readLine();
+int y = Integer.parseInt(s);
+if (x > y) {
+    System.out.println("The bigger number was: " + x);
+} else if (x < y) {
+    System.out.println("The bigger number was: " + y);
+} else {
+    System.out.println("Both are the same: " + x);
+}
