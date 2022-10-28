@@ -1,0 +1,60 @@
+public class Person implements HasName {
+  private String name;
+  public Person(String name) {
+    this.name = name;
+  }
+  public String getName() {
+    return name;
+  }
+}
+
+public class Student extends Person {
+  //private String name; // no longer needed!
+  private int studentId;
+
+  public Student(String name, int id) {
+    super(name);
+    studentId = id;
+  }
+
+  public int getStudentId() {
+    return studentId;
+  }
+}
+
+public interface HasName {
+  String getName();
+}
+
+public abstract class Animal implements HasName {
+  private String name;
+  public Animal(String name) {
+    this.name = name;
+  }
+  public String getName() {
+    return name;
+  }
+  public abstract void move(int metres);
+}
+
+public abstract class Mammal extends Animal {
+  // ...
+}
+
+public class Dog extends Animal {
+  private int location;
+  public Dog(String name) {
+    super(name);
+    location = 0;
+  }
+
+  @Override
+  public void move(int metres) {
+    walk(metres);
+  }
+
+  private void walk(int metres) {
+    location = location + metres;
+  }
+}
+
