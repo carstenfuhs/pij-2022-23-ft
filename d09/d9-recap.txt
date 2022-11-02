@@ -1,0 +1,67 @@
+Polymorphism
+ poly = many
+ morphe = shape
+
+*** methods ***
+-> method signature
+   name of the method + list of the parameter types
+
+   public String someMethod(int x, Person p)
+   has the signature:
+                 someMethod(int  , Person  )
+
+* overloading
+example in English: mouse (computer input device, animal)
+example for Java methods:
+
+method substring in class String is overloaded:
+
+substring(int)
+substring(int, int)
+
+"Hello".substring(1,2) // uses the second method
+"Hello".substring(3) // uses the first method
+
+-> determined at compile time; compile-time polymorphism
+  (the compiler identifies the signature)
+
+* overriding
+void doSomething(Person p) {
+  p.move(20); // calls method move ... but in which class?
+}
+
+The decision what /code/ to use for move is made
+only when the method is /run/.
+The reason is that at runtime we have extra information
+about the object in the computer's memory.
+(runtime polymorphism)
+
+
+void doSomething(Person p) {
+  if (p instanceof AdultPerson) {
+    AdultPerson ap = (AdultPerson) p;
+    // ...
+  }
+}
+
+*** classes ***
+parametric polymorphism
+generic types
+
+IntegerList
+StringList
+->
+List<E>
+
+the user of the list writes:
+
+List<Integer> myIntList = new LinkedList<Integer>();
+List<String> myStringList = new LinkedList<String>();
+
+public interface List<E> {
+  E get(int i);
+  void add(E value);
+  // ...
+}
+
+
