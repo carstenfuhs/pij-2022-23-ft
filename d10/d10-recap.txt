@@ -1,0 +1,50 @@
+Java Collections Framework - since Java 2
+with Generic types - since 5
+
+* old code:
+List myList = new ArrayList();
+myList.add("Hello");
+Integer i = (Integer) myList.get(0); // exception!
+
+* since Java 5:
+List<String> myList = new ArrayList<String>();
+// since Java 7:
+// List<String> myList = new ArrayList<>();
+myList.add("Hello");
+//Integer i = myList.get(0); // compiler says "no"
+String s = myList.get(0);
+
+Collection<E>
+ List<E>
+  ArrayList<E>
+  LinkedList<E> (also a Queue<E>)
+ Set<E>
+  HashSet<E>
+   - hashCode() of a and b different => a and b not equal
+   - order of elements is not predictable
+  LinkedHashSet<E>
+   - since Java 4
+   - like HashSet<E>, but order of elements in the iteration
+     is the same as the order in which they were inserted
+  TreeSet<E>
+   - needs objects to be Comparable<E>
+     a.compareTo(b) must be consistent with a.equals(b)
+     a.compareTo(b)
+       < 0 - a comes before b
+       = 0 - a is equal to b
+       > 0 - a comes after b
+   - will internally sort the elements
+
+Iterator<E>
+ .next()
+ .hasNext()
+ .remove()
+
+  public static void doSomething(List<Integer> myList) {
+      for (Integer i : myList) {
+        // ...
+      }
+  }
+
+Map<K, V>
+like Set<K>, the requirements on K are the same
