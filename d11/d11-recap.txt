@@ -1,0 +1,40 @@
+variables, assignments, statements, expressions
+control flow: branching (if, switch), loops (while, for)
+methods
+arrays
+
+classes (with member variables, constructors, methods): our own data structures
+  -> JavaDoc /** ... */
+linked lists via pointers
+interfaces or interface types: "contracts" what functionality should the implementing classes have?
+subclasses and inheritance: specialise classes without having to start from scratch
+polymorphism
+- method overloading (same method names, different parameter type lists -> different signatures)
+- method overriding (same method names, same parameter type lists -> same signature in different classes)
+- generic types: IntegerList, StringList, ... -> List<E>
+
+Java Collections (Lists, Sets, Maps, ...)
+
+TODAY:
+
+* Exceptions
+
+  BOSS: Please get me the title of the first book on Shelf 20.
+  ASSISTANT: But we only have 10 shelves! I don't know what to say! *panics*
+  
+  The assistant will throw an Exception. The boss will have to handle
+  the exception... or tell /their/ boss that they could not complete
+  the task, passing the exception further up.
+
+  Java:
+  - Runtime exception -> programming mistakes
+  - Checked exception -> the programmer cannot prevent them, so they must be "caught" and handled
+  
+* Input/Output
+Day 1 topic -> read from keyboard, write to the screen
+read from text files
+write to text files
+read from and write to "binary" files
+  -> important for multimedia data
+
+

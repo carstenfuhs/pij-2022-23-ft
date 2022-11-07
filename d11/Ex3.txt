@@ -1,0 +1,17 @@
+Ex 3:
+
+// ...
+
+int x = 0;
+boolean readOk = false;
+
+do {
+  try {
+    String s = System.console().readLine();
+    x = Integer.parseInt(s);
+    readOk = true; // this line is reached only if parsing was successful
+  } catch (NumberFormatException e) {
+    System.out.println(s + " is not an integer, try again!");
+  }
+}
+while (!readOk);
