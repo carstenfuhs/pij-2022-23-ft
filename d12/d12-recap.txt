@@ -1,0 +1,22 @@
+Automated testing
+JUnit
+unit tests
+- create tests (annotation @Test)
+- basic functionality tests, border cases, illegal inputs (-> exception), test with timeout
+
+assertEquals(expected, actual);
+assertThrows
+assertTimeout
+
+"find bugs once"
+- reproduce bug (erroneous behaviour)
+- reproduce bug programmatically
+- write a test case that triggers the bug and expects correct behaviour
+- only now repair the bug in the program
+
+Then you can be sure that the program will not "regress" to its earlier
+incorrect state (for this input) without this being noticed.
+
+Test overnight; Continuous Integration, Continuous Deployment
+
+Test-Driven Development
