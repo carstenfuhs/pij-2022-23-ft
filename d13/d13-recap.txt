@@ -1,0 +1,28 @@
+Recursion:
+something defined in terms of "itself"
+
+(1) methods
+Method calls itself to solve a problem
+  (a) base case: simple inputs (n <= 0) -> direct solution
+  (b) recursive case: "complex" inputs
+      - make a step towards the solution
+      - make the problem slightly easier (n -> n-1)
+
+(2) data types / classes
+Class defined with a member variable of the same type
+examples:
+  - linked list
+      public class ListNode {
+          private int value;
+          private ListNode next;
+      }
+  - tree
+      public class TreeNode {
+          private int value;
+          private TreeNode left;
+          private TreeNode right;
+      }
+
+For lists, loops and recursion are about equally easy
+to read (and implement).
+For trees, recursive methods make writing algorithms easier.
