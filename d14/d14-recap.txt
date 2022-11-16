@@ -1,0 +1,71 @@
+If you are stuck (also on an earlier topic):
+Please ask us for help (in person, by e-mail, by chat , ...
+
+Day 13: Video with "Parable of the clones" for recursion
+
+Recursion
+- "base case"
+  method: smallest input -> return result
+  data structures:
+    in a tree, it is a node without successor (a "leaf")
+- use "itself" as a helper
+  method:
+   - calls itself on a smaller input, gets result
+   - combines that result with the "local information"
+     to get overall result
+  data structures: class Something with a field of the
+     same type Something (e.g., a linked list or a tree)
+
+example: method to reverse a String
+  base case: String of length 0 or 1 -> return the same String
+  recursive call: take substring(1), reverse it
+      combine the result with first letter (now at the end)
+
+Issues:
+- Fibonacci
+F(1) = 1
+F(2) = 1
+F(n) = F(n-2) + F(n-1), for n > 2
+
+-> repeated computations of the same value
+
+solution: store intermediate values (e.g., in an array)
+and look them up before starting a computation
+
+memoisation, dynamic programming
+
+- nicer cases: divide and conquer
+example:
+  - binary search
+      sorted list
+      phone book
+      dictionary (e.g., English-French)
+      sorted trees
+  - "traversal" of recursive data structures
+    (visiting all the nodes/objects)
+      size()
+
+- trees and subclasses
+example: arithmetic expressions
+
+  - a number is an expression
+  - if A and B are expressions,
+    then also (A + B) is an expression
+  - if A and B are expressions,
+    then also (A * B) is an expression
+
+some expressions:
+2
+-7
+(2 + -7)
+8
+((2 + -7) * 8)
+
+represent the different types of expressions in Java
+by an inheritance hierarchy
+ interface Expression
+   class IntConstant
+   abstract class BinaryExpression
+     class PlusExpression
+     class TimesExpression
+
