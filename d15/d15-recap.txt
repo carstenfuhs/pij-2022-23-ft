@@ -1,0 +1,65 @@
+Functional programming in Java
+
+Functional interface:
+interface with /just one/ abstract method
+
+public interface StringToIntFunction {
+    int apply(String s);
+}
+
+public class StringLengthMeasurer
+    implements StringToIntFunction {
+
+    @Override
+    public int apply(String s) {
+        return s.length();
+    }
+}
+
+
+    
+    public int[] map(StringToIntFunction f, String[] array) {
+        int[] result = new int[array.length];
+        for (int i = 0; i < array.length; i++) {
+            result[i] = f.apply(array[i]);
+        }
+        return result;
+    }
+    
+    [...]
+        //StringToIntFunction f = new StringLengthMeasurer();
+        StringLengthMeasurer f = new StringLengthMeasurer();
+        int[] myIntArray = map(f, myStringArray);
+
+Since Java 8:
+
+        StringToIntFunction f2 = (String s) -> { return s.length(); };
+        StringToIntFunction f3 = (s) -> s.length();
+        StringToIntFunction f4 = s -> s.length(); // omit () if only one argument
+        StringToIntFunction f5 = String::length;
+
+Several predefined functional interfaces that are used in the core Java
+libraries, and also in JUnit 5:
+
+   assertThrows(IllegalArgumentException.class,
+       () -> { someMethodCall(); });
+
+someMethodCall runs only /inside/ assertThrows, not before!
+
+Streams:
+
+- source (someCollection.stream(), files can be a source, ...)
+- zero or more intermediate operations (e.g., map, filter)
+- terminal operation (e.g., toList())
+
+Benefits of streams:
+
+- can allow for succinct data processing pipelines
+- allow for writing parallel code /implicitly/
+    -> modern computers have several computing cores, get speed-up
+
+Similar: iterators
+But: iterators would be used for explicit loops, now it is all implicit!
+
+
+
