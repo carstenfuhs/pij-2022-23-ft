@@ -1,0 +1,63 @@
+Concurrency
+
+Operating-System level:
+several programs running at the same time
+music player, word processor, web browser, ...
+
+processes: running programs
+each with their own stack and heap memory
+
+threads of execution:
+separate computations, can communicate
+each thread has its own stack memory
+the heap is global memory inside the process,
+  shared by all threads
+
+analogy: threads in story-telling
+
+atomic operations
+e.g., assignment:
+
+   x = 42;
+
+if x has a type with 32 bits or is of a complex type
+
+public synchronized void myMethod(int x, int y) {
+    // both x and y will be printed!
+    System.out.print(x);
+    System.out.print(y);
+}
+
+possible problem: write operations
+
+one solution: work with immutable data
+- immutable object/class: has no mutator methods
+
+in contrast: constant (written with "final")
+
+   public static final List<Integer> myList = new ArrayList<>();
+
+myList is a constant (the value of the *variable* stays fixed forever
+while the program is running)
+
+but we can still call myList.add(42), which changes the *state of the object*
+
+so what is constant here is the reference, but not the state of the object
+behind the reference
+
+Thus, ArrayList is not an immutable class
+
+String, Integer, Double are examples of immutable Java classes
+
+----
+
+Since Java 5: Executor
+"thread pool" -> a pool (a collection) of Thread objects that can do the work
+                 and that are managed by an Executor object
+
+parallelism and concurrency in Java:
+
+Thread: low level
+Executors: a bit higher-level
+stream API from Monday: very high-level
+
