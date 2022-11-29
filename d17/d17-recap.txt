@@ -1,0 +1,6 @@
+Graphical User Interfaces
+
+JFrame - top-level container
+ has many smaller components
+
+-> discussion of MyFirstGUI from the worksheet
