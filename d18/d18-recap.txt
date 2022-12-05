@@ -1,0 +1,17 @@
+client - server
+example: web browser - web server
+
+REST API
+protocol: HTTP, HTTPS
+
+https://catfact.ninja/fact
+  -> GET requests via web browser, but also via Java code
+
+conversion from JSON to actual Java objects with the same
+structure: Gson library from Google
+
+fromJson method converts from a JSON file to an object
+of a specific class
+
+REST API: "stateless"
+
